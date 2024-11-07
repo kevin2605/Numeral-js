@@ -842,5 +842,29 @@
     });
 })();
 
+(function() {
+        numeral.register('locale', 'rp', {
+        delimiters: {
+            thousands: '.',
+            decimal: ','
+        },
+        abbreviations: {
+            thousand: 'rb',
+            million: 'jt',
+            billion: 'M',
+            trillion: 'T'
+        },
+        ordinal: function () {
+            // not ideal, but since in Ukrainian it can taken on
+            // different forms (masculine, feminine, neuter)
+            // this is all we can do
+            return '';
+        },
+        currency: {
+            symbol: 'Rp'
+        }
+    });
+})();
+
 
 }));
